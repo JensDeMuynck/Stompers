@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stompers Results</title>
+<meta name="description" content="Monthly step challenge results: the stats, the race, and the champion.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #111114;
+    --surface-1: #1c1c21;
+    --surface-2: #26262d;
+    --border: #34343c;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted: #8d8c85;
+    --gold: #ffc83d;
+    --silver: #d6dbe3;
+    --bronze: #e0915a;
+    --accent: #ff5fa2;
+    --grid: #2e2e35;
+    /* categorical slots, dark steps */
+    --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --series-4: #c98500;
+    --series-5: #d55181; --series-6: #008300; --series-7: #9085e9; --series-8: #e66767;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: Inter, system-ui, sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  h1, h2, .display { font-family: Bungee, Inter, sans-serif; font-weight: 400; letter-spacing: .5px; }
+  h2 { font-size: clamp(1.4rem, 4vw, 2rem); margin: 0 0 6px; }
+  .sub { color: var(--text-secondary); margin: 0 0 24px; }
+  section { padding: 56px 0; }
+
+  /* Hero */
+  .hero { text-align: center; padding: 72px 16px 40px; position: relative; }
+  .hero .eyebrow { color: var(--accent); font-weight: 800; letter-spacing: 3px; text-transform: uppercase; font-size: .8rem; }
+  .hero h1 { font-size: clamp(2.6rem, 11vw, 6rem); line-height: 1; margin: 12px 0;
+    background: linear-gradient(180deg, #fff 30%, #ffb3d4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero .month { font-size: clamp(1.1rem, 4vw, 1.6rem); color: var(--text-secondary); }
+  .footprints { font-size: 2rem; letter-spacing: 12px; opacity: .6; margin-top: 18px; }
+  .footprints span { display: inline-block; animation: step 1.6s infinite; }
+  .footprints span:nth-child(2) { animation-delay: .2s } .footprints span:nth-child(3) { animation-delay: .4s }
+  .footprints span:nth-child(4) { animation-delay: .6s } .footprints span:nth-child(5) { animation-delay: .8s }
+  @keyframes step { 0%,100% { transform: translateY(0); opacity: .3 } 50% { transform: translateY(-8px); opacity: 1 } }
+
+  .rules { background: var(--surface-1); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; color: var(--text-secondary); max-width: 680px; margin: 28px auto 0; text-align: left; }
+  .rules b { color: var(--text-primary); }
+
+  /* Stat tiles */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+  .tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 16px; padding: 18px; position: relative; overflow: hidden;
+    opacity: 0; transform: translateY(16px); transition: opacity .5s, transform .5s; }
+  .tile.in { opacity: 1; transform: none; }
+  .tile .emoji { font-size: 1.8rem; position: absolute; right: 14px; top: 12px; }
+  .tile .label { color: var(--text-secondary); font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .8px; padding-right: 40px; }
+  .tile .value { font-size: 1.9rem; font-weight: 800; margin: 6px 0 2px; font-variant-numeric: tabular-nums; }
+  .tile .who { color: var(--text-primary); font-weight: 600; }
+  .tile .note { color: var(--text-muted); font-size: .85rem; }
+  .tile.big { grid-column: 1 / -1; text-align: center; background: linear-gradient(135deg, #2a1730, #1c1c21 60%); }
+  .tile.big .value { font-size: clamp(2.4rem, 9vw, 4rem); }
+
+  /* Reveal */
+  #reveal { text-align: center; }
+  .btn { font-family: Bungee, sans-serif; font-size: 1.2rem; color: #1a1205; background: linear-gradient(180deg, #ffe07a, var(--gold));
+    border: 0; border-radius: 999px; padding: 18px 34px; cursor: pointer; box-shadow: 0 0 0 0 rgba(255,200,61,.6); animation: pulse 2s infinite; }
+  .btn:hover { filter: brightness(1.08); }
+  .btn.ghost { background: var(--surface-2); color: var(--text-primary); animation: none; font-size: .9rem; padding: 12px 22px; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,200,61,.55) } 70% { box-shadow: 0 0 0 22px rgba(255,200,61,0) } 100% { box-shadow: 0 0 0 0 rgba(255,200,61,0) } }
+  .sound { display: block; margin: 14px auto 0; color: var(--text-muted); font-size: .85rem; }
+  .stage { max-width: 620px; margin: 10px auto 0; display: flex; flex-direction: column-reverse; gap: 10px; }
+  .place { display: flex; align-items: center; gap: 14px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px;
+    padding: 12px 16px; text-align: left; animation: slam .55s cubic-bezier(.2,1.6,.4,1) both; }
+  .place .pos { font-family: Bungee, sans-serif; font-size: 1.4rem; width: 52px; text-align: center; color: var(--text-secondary); flex-shrink: 0; }
+  .place .nm { flex: 1; min-width: 0; }
+  .place .nm b { display: block; font-size: 1.05rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .place .nm small { color: var(--text-muted); }
+  .place .pts { font-weight: 800; font-variant-numeric: tabular-nums; text-align: right; }
+  .place .pts small { display: block; color: var(--text-muted); font-weight: 500; }
+  .place.p2 { border-color: var(--silver); } .place.p2 .pos { color: var(--silver); }
+  .place.p3 { border-color: var(--bronze); } .place.p3 .pos { color: var(--bronze); }
+  @keyframes slam { from { opacity: 0; transform: scale(1.6) rotate(-3deg); } to { opacity: 1; transform: none; } }
+  .suspense { font-family: Bungee, sans-serif; font-size: clamp(1.2rem, 5vw, 2rem); margin: 28px 0 0; min-height: 3em; }
+  .suspense:empty { min-height: 0; margin: 0; }
+  .suspense.shake { animation: shake .12s infinite; }
+  @keyframes shake { 0%{transform:translate(0,0)} 25%{transform:translate(2px,-1px)} 50%{transform:translate(-2px,1px)} 75%{transform:translate(1px,2px)} }
+  .champion { margin: 20px auto 0; max-width: 620px; padding: 34px 20px; border-radius: 24px; position: relative;
+    background: radial-gradient(circle at 50% 0%, rgba(255,200,61,.35), transparent 65%), var(--surface-1); border: 2px solid var(--gold);
+    animation: champ 1s cubic-bezier(.2,1.4,.4,1) both; }
+  .champion .crown { font-size: 4rem; animation: bob 2s ease-in-out infinite; display: inline-block; }
+  .champion .name { font-family: Bungee, sans-serif; font-size: clamp(2rem, 9vw, 3.6rem); line-height: 1.05; color: var(--gold); margin: 8px 0; word-break: break-word; }
+  .champion .meta { color: var(--text-secondary); }
+  .champion .meta b { color: var(--text-primary); }
+  .champion .btn { margin-top: 10px; }
+  @keyframes champ { from { opacity: 0; transform: scale(.3) rotate(8deg); } to { opacity: 1; transform: none; } }
+  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-6deg) } 50% { transform: translateY(-10px) rotate(6deg) } }
+  .flash { position: fixed; inset: 0; background: #fff; pointer-events: none; opacity: 0; z-index: 50; }
+  .flash.go { animation: flash .7s ease-out; }
+  @keyframes flash { 0% { opacity: .85 } 100% { opacity: 0 } }
+  #confetti { position: fixed; inset: 0; pointer-events: none; z-index: 40; }
+
+  .after { display: none; }
+  .after.show { display: block; animation: fadeUp .8s both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px) } to { opacity: 1; transform: none } }
+
+  /* Charts */
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 16px; padding: 18px; margin-bottom: 18px; }
+  .card h3 { margin: 0 0 2px; font-size: 1.05rem; }
+  .card .hint { color: var(--text-muted); font-size: .85rem; margin: 0 0 12px; }
+  .chart { position: relative; width: 100%; }
+  .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 12px; font-size: .85rem; color: var(--text-secondary); }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+  .tooltip { position: absolute; pointer-events: none; background: #0b0b0d; border: 1px solid var(--border); border-radius: 10px;
+    padding: 8px 10px; font-size: .8rem; color: var(--text-primary); white-space: nowrap; opacity: 0; transition: opacity .12s; z-index: 5; box-shadow: 0 6px 20px rgba(0,0,0,.4); }
+  .tooltip .row { display: flex; align-items: center; gap: 6px; }
+  .tooltip i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .tooltip .muted { color: var(--text-muted); }
+  .scroll-x { overflow-x: auto; }
+
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { padding: 10px 8px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--text-muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .8px; font-weight: 600; }
+  td.num, th.num { text-align: right; }
+  tr.first td { color: var(--gold); font-weight: 700; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; }
+
+  .error { background: #3a1717; border: 1px solid #7a2a2a; border-radius: 12px; padding: 16px; margin: 40px 0; }
+  footer { color: var(--text-muted); text-align: center; padding: 30px 0 50px; font-size: .85rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  }
+</style>
+</head>
+<body>
+<canvas id="confetti"></canvas>
+<div class="flash" id="flash"></div>
+
+<header class="hero wrap">
+  <div class="eyebrow">The monthly step showdown</div>
+  <h1>Stompers</h1>
+  <div class="month" id="month">Loading results…</div>
+  <div class="footprints" aria-hidden="true"><span>👣</span><span>👣</span><span>👣</span><span>👣</span><span>👣</span></div>
+  <div class="rules">
+    <b>How it works:</b> every day, your finishing place becomes your points (1st = 1 point, 2nd = 2 points…).
+    All days are added up and the <b>lowest total wins</b>. Missed a day? You get the points for one place below last.
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="error"></div>
+
+  <section id="reveal">
+    <h2>The moment of truth</h2>
+    <p class="sub">Who stomped the hardest this month?</p>
+    <button class="btn" id="revealBtn">Reveal the champion</button>
+    <label class="sound"><input type="checkbox" id="soundOn" checked> Sound on</label>
+    <div id="champ"></div>
+    <div class="suspense" id="suspense" aria-live="polite"></div>
+    <div class="stage" id="stage"></div>
+  </section>
+
+  <section id="stats">
+    <h2>The numbers</h2>
+    <p class="sub">The month in numbers.</p>
+    <div class="grid" id="tiles"></div>
+  </section>
+
+
+  <section class="after" id="after">
+    <h2>How it went down</h2>
+    <p class="sub">The full race, day by day.</p>
+
+    <div class="card">
+      <h3>Standings race</h3>
+      <p class="hint">Overall position after each day. Hover or tap to see the points.</p>
+      <div class="chart" id="raceChart"></div>
+      <div class="legend" id="raceLegend"></div>
+    </div>
+
+    <div class="card">
+      <h3>Daily finishes</h3>
+      <p class="hint">Each player's place, every day. Brighter means a better finish.</p>
+      <div class="chart scroll-x" id="heatmap"></div>
+    </div>
+
+    <div class="card">
+      <h3>Total steps</h3>
+      <p class="hint">Raw steps over the whole month. These don't decide the winner, the daily places do.</p>
+      <div class="chart" id="stepsChart"></div>
+    </div>
+
+    <div class="card">
+      <h3>Final standings</h3>
+      <div class="scroll-x">
+        <table id="standings"></table>
+      </div>
+    </div>
+
+    <p style="text-align:center"><button class="btn ghost" id="replayBtn">Replay the reveal</button></p>
+  </section>
+</main>
+
+<footer>Made for the Stompers. Data: <a id="dataLink" href="results-dummy.csv" style="color:inherit">results-dummy.csv</a></footer>
+
+<script>
+(() => {
+  const SERIES = ['--series-1','--series-2','--series-3','--series-4','--series-5','--series-6','--series-7','--series-8']
+    .map(v => getComputedStyle(document.documentElement).getPropertyValue(v).trim());
+  // Which data file to load. Switch to "results.csv" once the real month is in (or use ?csv=results.csv).
+  const DATA_FILE = new URLSearchParams(location.search).get("csv") || "results-dummy.csv";
+  const STRIDE_M = 0.75; // average step length
+  const EARTH_KM = 40075;
+  const fmt = n => Math.round(n).toLocaleString('en-US');
+  const fmt1 = n => (Math.round(n * 10) / 10).toLocaleString('en-US');
+  const ordinal = n => n + (['th','st','nd','rd'][(n % 100 - 20) % 10] || ['th','st','nd','rd'][n % 100] || 'th');
+  const parseDate = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+  const shortDate = s => parseDate(s).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  const longDate = s => parseDate(s).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  function parseCSV(text) {
+    const rows = []; let row = [], field = '', q = false;
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (q) {
+        if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+        else if (c === '"') q = false;
+        else field += c;
+      } else if (c === '"') q = true;
+      else if (c === ',') { row.push(field); field = ''; }
+      else if (c === '\n' || c === '\r') {
+        if (c === '\r' && text[i + 1] === '\n') i++;
+        row.push(field); field = '';
+        if (row.some(f => f !== '')) rows.push(row);
+        row = [];
+      } else field += c;
+    }
+    row.push(field); if (row.some(f => f !== '')) rows.push(row);
+    const head = rows.shift().map(h => h.trim());
+    return rows.map(r => Object.fromEntries(head.map((h, i) => [h, (r[i] || '').trim()])));
+  }
+
+  // ---------- Model ----------
+  function build(records) {
+    const dates = [...new Set(records.map(r => r.date))].sort();
+    const players = new Map();
+    for (const r of records) {
+      if (!players.has(r.handle)) players.set(r.handle, { handle: r.handle, name: r.name, days: {} });
+      players.get(r.handle).days[r.date] = { rank: +r.rank, steps: +r.steps };
+    }
+    const fieldSize = {};
+    for (const d of dates) fieldSize[d] = records.filter(r => r.date === d).length;
+    // colour follows the entity: assign by handle, alphabetically
+    [...players.values()].sort((a, b) => a.handle.localeCompare(b.handle))
+      .forEach((p, i) => p.color = SERIES[i % SERIES.length]);
+
+    const pointsOn = (p, d) => p.days[d] ? p.days[d].rank : fieldSize[d] + 1;
+    for (const p of players.values()) {
+      p.score = dates.reduce((s, d) => s + pointsOn(p, d), 0);
+      p.totalSteps = Object.values(p.days).reduce((s, x) => s + x.steps, 0);
+      p.played = Object.keys(p.days).length;
+      p.avgSteps = p.totalSteps / Math.max(1, p.played);
+      p.wins = Object.values(p.days).filter(x => x.rank === 1).length;
+      p.podiums = Object.values(p.days).filter(x => x.rank <= 3).length;
+      const ranks = Object.values(p.days).map(x => x.rank);
+      p.avgRank = ranks.reduce((a, b) => a + b, 0) / Math.max(1, ranks.length);
+      p.rankSd = Math.sqrt(ranks.reduce((s, r) => s + (r - p.avgRank) ** 2, 0) / Math.max(1, ranks.length));
+      let run = 0; p.streak = 0;
+      for (const d of dates) { run = p.days[d]?.rank === 1 ? run + 1 : 0; p.streak = Math.max(p.streak, run); }
+    }
+    const cmp = (a, b) => a.score - b.score || b.totalSteps - a.totalSteps;
+    const standings = [...players.values()].sort(cmp);
+    standings.forEach((p, i) => p.place = i + 1);
+
+    // standings after each day, for the race chart
+    const timeline = dates.map((d, di) => {
+      const upto = dates.slice(0, di + 1);
+      const list = [...players.values()].map(p => ({
+        p, score: upto.reduce((s, x) => s + pointsOn(p, x), 0),
+        steps: upto.reduce((s, x) => s + (p.days[x]?.steps || 0), 0)
+      })).sort((a, b) => a.score - b.score || b.steps - a.steps);
+      const pos = {}; list.forEach((e, i) => pos[e.p.handle] = { place: i + 1, score: e.score });
+      return { date: d, pos };
+    });
+    return { dates, players: [...players.values()], standings, timeline, records };
+  }
+
+  // ---------- Stat tiles ----------
+  function renderTiles(m) {
+    const { dates, players, records } = m;
+    const total = records.reduce((s, r) => s + +r.steps, 0);
+    const km = total * STRIDE_M / 1000;
+    const tiles = [];
+    tiles.push({ big: true, emoji: '🌍', label: 'Steps stomped together', value: fmt(total),
+      note: `≈ ${fmt(km)} km, or ${fmt1(km / EARTH_KM * 100)}% of the way around the Earth, across ${dates.length} day${dates.length === 1 ? '' : 's'}` });
+
+    const best = records.reduce((a, b) => +b.steps > +a.steps ? b : a);
+    tiles.push({ emoji: '🚀', label: 'Biggest single day', value: fmt(+best.steps), who: best.name, note: longDate(best.date) });
+
+    const lazy = records.reduce((a, b) => +b.steps < +a.steps ? b : a);
+    tiles.push({ emoji: '🛋️', label: 'Couch day award', value: fmt(+lazy.steps), who: lazy.name, note: `${longDate(lazy.date)}. We all need rest.` });
+
+    const topAvg = [...players].sort((a, b) => b.avgSteps - a.avgSteps)[0];
+    tiles.push({ emoji: '📈', label: 'Highest daily average', value: fmt(topAvg.avgSteps), who: topAvg.name, note: `steps per day over ${topAvg.played} day${topAvg.played === 1 ? '' : 's'}` });
+
+    const maxWins = Math.max(...players.map(p => p.wins));
+    const winners = players.filter(p => p.wins === maxWins);
+    tiles.push({ emoji: '🥇', label: 'Most daily wins', value: `${maxWins}×`, who: winners.map(p => p.name).join(' & '), note: winners.length > 1 ? 'shared the top spot' : 'finished 1st the most' });
+
+    if (dates.length >= 3) {
+      const streaker = [...players].sort((a, b) => b.streak - a.streak)[0];
+      if (streaker.streak >= 2) tiles.push({ emoji: '🔥', label: 'Longest win streak', value: `${streaker.streak} days`, who: streaker.name, note: 'unbeaten in a row' });
+      const steady = [...players].filter(p => p.played >= 2).sort((a, b) => a.rankSd - b.rankSd || a.avgRank - b.avgRank)[0];
+      if (steady) tiles.push({ emoji: '🎯', label: 'Mr/Ms Consistent', value: `±${fmt1(steady.rankSd)}`, who: steady.name, note: `places barely moved, averaging ${fmt1(steady.avgRank)}` });
+    }
+
+    // closest gap between neighbours on any day, and biggest 1st→2nd blowout
+    let photo = null, blowout = null;
+    for (const d of dates) {
+      const day = records.filter(r => r.date === d).sort((a, b) => a.rank - b.rank);
+      for (let i = 1; i < day.length; i++) {
+        const gap = +day[i - 1].steps - +day[i].steps;
+        if (!photo || gap < photo.gap) photo = { gap, a: day[i - 1], b: day[i], d };
+      }
+      if (day.length > 1) {
+        const gap = +day[0].steps - +day[1].steps;
+        if (!blowout || gap > blowout.gap) blowout = { gap, a: day[0], b: day[1], d };
+      }
+    }
+    if (photo) tiles.push({ emoji: '📸', label: 'Photo finish', value: `${fmt1(photo.gap)} steps`, who: `${photo.a.name} vs ${photo.b.name}`, note: `for ${ordinal(+photo.a.rank)} place on ${longDate(photo.d)}` });
+    if (blowout && (!photo || blowout.d !== photo.d || blowout.a !== photo.a)) tiles.push({ emoji: '💨', label: 'Biggest blowout', value: `${fmt(blowout.gap)} steps`, who: `${blowout.a.name} over ${blowout.b.name}`, note: `winning margin on ${longDate(blowout.d)}` });
+
+    const weekend = records.filter(r => [0, 6].includes(parseDate(r.date).getDay()));
+    if (weekend.length) {
+      const by = {};
+      for (const r of weekend) (by[r.handle] ??= []).push(+r.steps);
+      const [h, arr] = Object.entries(by).sort((a, b) => b[1].reduce((x, y) => x + y) / b[1].length - a[1].reduce((x, y) => x + y) / a[1].length)[0];
+      tiles.push({ emoji: '🏖️', label: 'Weekend warrior', value: fmt(arr.reduce((x, y) => x + y) / arr.length), who: players.find(p => p.handle === h).name, note: 'average steps on Saturdays & Sundays' });
+    }
+
+    const spread = Math.max(...records.map(r => +r.steps)) / Math.max(1, Math.min(...records.map(r => +r.steps)));
+    tiles.push({ emoji: '⚖️', label: 'Spread of the pack', value: `${fmt1(spread)}×`, note: 'the best day had this many times the steps of the quietest day' });
+
+    const el = document.getElementById('tiles');
+    el.innerHTML = tiles.map(t => `
+      <div class="tile${t.big ? ' big' : ''}">
+        <div class="emoji" aria-hidden="true">${t.emoji}</div>
+        <div class="label">${esc(t.label)}</div>
+        <div class="value">${esc(t.value)}</div>
+        ${t.who ? `<div class="who">${esc(t.who)}</div>` : ''}
+        <div class="note">${esc(t.note)}</div>
+      </div>`).join('');
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+    [...el.children].forEach((c, i) => { c.style.transitionDelay = (i % 4) * 80 + 'ms'; io.observe(c); });
+  }
+
+  // ---------- Sound ----------
+  let ctx;
+  const soundOn = () => document.getElementById('soundOn').checked;
+  function audio() { if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)(); return ctx; }
+  function noiseHit(t, dur, gain, freq) {
+    const a = audio(), len = Math.floor(a.sampleRate * dur), buf = a.createBuffer(1, len, a.sampleRate), data = buf.getChannelData(0);
+    for (let i = 0; i < len; i++) data[i] = (Math.random() * 2 - 1) * (1 - i / len) ** 2;
+    const src = a.createBufferSource(), f = a.createBiquadFilter(), g = a.createGain();
+    src.buffer = buf; f.type = 'bandpass'; f.frequency.value = freq; g.gain.value = gain;
+    src.connect(f).connect(g).connect(a.destination); src.start(t);
+  }
+  function tone(t, freq, dur, gain = .15, type = 'triangle') {
+    const a = audio(), o = a.createOscillator(), g = a.createGain();
+    o.type = type; o.frequency.value = freq;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(gain, t + .02); g.gain.exponentialRampToValueAtTime(.001, t + dur);
+    o.connect(g).connect(a.destination); o.start(t); o.stop(t + dur + .05);
+  }
+  function thud() { if (!soundOn()) return; const t = audio().currentTime; tone(t, 110, .35, .3, 'sine'); noiseHit(t, .12, .5, 900); }
+  function drumroll(seconds) {
+    if (!soundOn()) return; const a = audio(), t0 = a.currentTime;
+    for (let t = 0; t < seconds; t += 0.045 - 0.02 * (t / seconds)) noiseHit(t0 + t, .06, .15 + .5 * (t / seconds), 1800);
+  }
+  function fanfare() {
+    if (!soundOn()) return; const t = audio().currentTime;
+    noiseHit(t, 1.6, .7, 6000);
+    [[523, 0], [659, .12], [784, .24], [1047, .4]].forEach(([f, d]) => tone(t + d, f, d === .4 ? 1.4 : .3, .18, 'sawtooth'));
+    [523, 659, 784].forEach(f => tone(t + .4, f, 1.4, .1, 'triangle'));
+  }
+
+  // ---------- Confetti ----------
+  const cv = document.getElementById('confetti'), cx = cv.getContext('2d');
+  let parts = [], raf;
+  function sizeCanvas() { cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio; }
+  function confetti(n = 260) {
+    sizeCanvas();
+    const colors = ['#ffc83d', '#ff5fa2', '#3987e5', '#199e70', '#ffffff', '#9085e9'];
+    for (let i = 0; i < n; i++) {
+      const fromLeft = i % 2 === 0;
+      parts.push({
+        x: (fromLeft ? 0 : innerWidth), y: innerHeight * .75,
+        vx: (fromLeft ? 1 : -1) * (4 + Math.random() * 10), vy: -(10 + Math.random() * 14),
+        r: 4 + Math.random() * 6, rot: Math.random() * 6, vr: (Math.random() - .5) * .4,
+        c: colors[i % colors.length], life: 0
+      });
+    }
+    cancelAnimationFrame(raf); tick();
+  }
+  function tick() {
+    cx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+    cx.clearRect(0, 0, innerWidth, innerHeight);
+    parts = parts.filter(p => p.y < innerHeight + 40 && p.life < 600);
+    for (const p of parts) {
+      p.vy += .35; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life++;
+      cx.save(); cx.translate(p.x, p.y); cx.rotate(p.rot); cx.fillStyle = p.c;
+      cx.fillRect(-p.r / 2, -p.r / 4, p.r, p.r / 2); cx.restore();
+    }
+    if (parts.length) raf = requestAnimationFrame(tick); else cx.clearRect(0, 0, innerWidth, innerHeight);
+  }
+
+  // ---------- Reveal ----------
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+  let revealing = false;
+  async function reveal(m) {
+    if (revealing) return; revealing = true;
+    const btn = document.getElementById('revealBtn'), stage = document.getElementById('stage'),
+      sus = document.getElementById('suspense'), champ = document.getElementById('champ');
+    btn.style.display = 'none'; stage.innerHTML = ''; champ.innerHTML = ''; sus.textContent = '';
+    const s = m.standings, n = m.dates.length;
+    const winner = s[0];
+
+    sus.textContent = 'Counting the stomps…';
+    await wait(1200);
+    const placeCard = i => {
+      const p = s[i], div = document.createElement('div');
+      div.className = `place p${i + 1}`;
+      div.innerHTML = `<div class="pos">${ordinal(i + 1)}</div>
+        <div class="nm"><b>${esc(p.name)}</b><small>@${esc(p.handle)} · ${fmt(p.totalSteps)} steps</small></div>
+        <div class="pts">${p.score}<small>points</small></div>`;
+      stage.appendChild(div);
+    };
+    // everyone from last place up to 3rd, one by one
+    for (let i = s.length - 1; i >= 2; i--) {
+      sus.textContent = i === 2 ? 'Onto the podium…' : `In ${ordinal(i + 1)} place…`;
+      await wait(i === 2 ? 2000 : 1200);
+      placeCard(i); thud();
+      await wait(i === 2 ? 1300 : 800);
+    }
+    // 1st and 2nd are revealed together, so the runner-up never gives the winner away
+    const gap = s[1] ? s[1].score - winner.score : 0;
+    sus.textContent = s[1] ? 'Two stompers left standing…' : '';
+    await wait(2000);
+    sus.textContent = `And the Stompers champion of ${monthLabel(m)} is…`;
+    sus.classList.add('shake'); drumroll(3.2);
+    await wait(3300);
+    sus.classList.remove('shake'); sus.textContent = '';
+    if (s[1]) placeCard(1);
+    const fl = document.getElementById('flash'); fl.classList.remove('go'); void fl.offsetWidth; fl.classList.add('go'); setTimeout(() => fl.classList.remove('go'), 800);
+    fanfare(); confetti(); setTimeout(() => confetti(160), 900); setTimeout(() => confetti(120), 1900);
+    const perfect = winner.score === n;
+    champ.innerHTML = `<div class="champion">
+      <div class="crown" aria-hidden="true">👑</div>
+      <div class="name">${esc(winner.name)}</div>
+      <div class="meta">@${esc(winner.handle)}</div>
+      <p class="meta"><b>${winner.score} points</b> · ${fmt(winner.totalSteps)} steps · ${winner.wins} daily win${winner.wins === 1 ? '' : 's'}</p>
+      <p class="meta">${perfect ? '🏆 A flawless month: 1st place every single day.'
+        : gap > 0 ? `Won by ${gap} point${gap === 1 ? '' : 's'} ahead of ${esc(s[1].name)}.`
+        : s[1] ? `Level on points with ${esc(s[1].name)}, settled on total steps.` : ''}</p>
+      <button class="btn ghost" id="toRace">See how it went down ↓</button>
+    </div>`;
+    document.getElementById('toRace').onclick = () => document.getElementById('after').scrollIntoView({ behavior: 'smooth' });
+    champ.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    document.getElementById('after').classList.add('show');
+    renderCharts(m);
+    revealing = false;
+  }
+  const monthLabel = m => parseDate(m.dates[m.dates.length - 1]).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+
+  // ---------- Charts ----------
+  function tooltipFor(container) {
+    let t = container.querySelector('.tooltip');
+    if (!t) { t = document.createElement('div'); t.className = 'tooltip'; container.appendChild(t); }
+    return {
+      show(html, x, y) {
+        t.innerHTML = html; t.style.opacity = 1;
+        const w = t.offsetWidth, cw = container.clientWidth;
+        t.style.left = Math.min(Math.max(0, x + 14), cw - w) + 'px';
+        t.style.top = Math.max(0, y - t.offsetHeight - 10) + 'px';
+      },
+      hide() { t.style.opacity = 0; }
+    };
+  }
+  const svgEl = (tag, attrs = {}) => { const e = document.createElementNS('http://www.w3.org/2000/svg', tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
+
+  function raceChart(m) {
+    const box = document.getElementById('raceChart'); box.innerHTML = '';
+    const W = box.clientWidth, labelW = Math.min(150, W * .32), H = Math.max(240, m.players.length * 38 + 50);
+    const pad = { l: 34, r: labelW, t: 14, b: 30 };
+    const n = m.dates.length, np = m.players.length;
+    const x = i => n === 1 ? pad.l + (W - pad.l - pad.r) / 2 : pad.l + i * (W - pad.l - pad.r) / (n - 1);
+    const y = place => pad.t + (place - 1) * (H - pad.t - pad.b) / Math.max(1, np - 1);
+    const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Overall standing after each day' });
+    for (let pl = 1; pl <= np; pl++) {
+      svg.appendChild(svgEl('line', { x1: pad.l, x2: W - pad.r + 8, y1: y(pl), y2: y(pl), stroke: 'var(--grid)', 'stroke-width': 1 }));
+      const t = svgEl('text', { x: pad.l - 10, y: y(pl) + 4, 'text-anchor': 'end', fill: 'var(--text-muted)', 'font-size': 11 }); t.textContent = ordinal(pl); svg.appendChild(t);
+    }
+    const every = Math.ceil(n / Math.max(1, Math.floor((W - pad.l - pad.r) / 56)));
+    m.dates.forEach((d, i) => {
+      if (i % every && i !== n - 1) return;
+      const t = svgEl('text', { x: x(i), y: H - 8, 'text-anchor': 'middle', fill: 'var(--text-muted)', 'font-size': 11 }); t.textContent = shortDate(d); svg.appendChild(t);
+    });
+    const cross = svgEl('line', { y1: pad.t - 6, y2: H - pad.b + 6, stroke: 'var(--text-muted)', 'stroke-width': 1, opacity: 0 });
+    svg.appendChild(cross);
+    const last = m.timeline[n - 1];
+    for (const p of m.players) {
+      const pts = m.timeline.map((tl, i) => [x(i), y(tl.pos[p.handle].place)]);
+      if (pts.length > 1) svg.appendChild(svgEl('polyline', { points: pts.map(q => q.join(',')).join(' '), fill: 'none', stroke: p.color, 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }));
+      const [lx, ly] = pts[pts.length - 1];
+      svg.appendChild(svgEl('circle', { cx: lx, cy: ly, r: 5, fill: p.color, stroke: 'var(--surface-1)', 'stroke-width': 2 }));
+      const t = svgEl('text', { x: lx + 12, y: ly + 4, fill: 'var(--text-secondary)', 'font-size': 12 });
+      const short = p.name.length > 16 ? p.name.slice(0, 15) + '…' : p.name;
+      t.textContent = `${short} · ${last.pos[p.handle].score}`; svg.appendChild(t);
+    }
+    box.appendChild(svg);
+    const tip = tooltipFor(box);
+    const move = ev => {
+      const r = svg.getBoundingClientRect(), sx = W / r.width;
+      const mx = (ev.clientX - r.left) * sx;
+      let i = n === 1 ? 0 : Math.round((mx - pad.l) / ((W - pad.l - pad.r) / (n - 1)));
+      i = Math.max(0, Math.min(n - 1, i));
+      cross.setAttribute('x1', x(i)); cross.setAttribute('x2', x(i)); cross.setAttribute('opacity', .6);
+      const tl = m.timeline[i];
+      const rows = [...m.players].sort((a, b) => tl.pos[a.handle].place - tl.pos[b.handle].place)
+        .map(p => `<div class="row"><i style="background:${p.color}"></i>${ordinal(tl.pos[p.handle].place)} ${esc(p.name)} <span class="muted">${tl.pos[p.handle].score} pts</span></div>`).join('');
+      tip.show(`<b>After ${longDate(tl.date)}</b>${rows}`, x(i) / sx, (ev.clientY - box.getBoundingClientRect().top));
+    };
+    svg.addEventListener('pointermove', move); svg.addEventListener('pointerdown', move);
+    svg.addEventListener('pointerleave', () => { tip.hide(); cross.setAttribute('opacity', 0); });
+    document.getElementById('raceLegend').innerHTML = m.standings.map(p => `<span><i style="background:${p.color}"></i>${esc(p.name)}</span>`).join('');
+  }
+
+  function heatmap(m) {
+    const box = document.getElementById('heatmap'); box.innerHTML = '';
+    const n = m.dates.length, np = m.players.length;
+    const nameW = 130, gap = 2, cell = Math.max(22, Math.min(40, Math.floor((box.clientWidth - nameW) / n) - gap)), W = nameW + n * (cell + gap), H = 26 + np * (cell + gap);
+    const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: W, role: 'img', 'aria-label': 'Daily finishing place per player' });
+    svg.style.width = Math.max(W, 0) + 'px'; svg.style.maxWidth = 'none';
+    // blue ramp: best finish brightest
+    const ramp = ['#9ec5f4', '#86b6ef', '#6da7ec', '#5598e7', '#3987e5', '#2a78d6', '#256abf', '#1c5cab', '#184f95'];
+    m.dates.forEach((d, j) => {
+      const t = svgEl('text', { x: nameW + j * (cell + gap) + cell / 2, y: 16, 'text-anchor': 'middle', fill: 'var(--text-muted)', 'font-size': 10 });
+      t.textContent = parseDate(d).getDate(); svg.appendChild(t);
+    });
+    const tip = tooltipFor(box);
+    m.standings.forEach((p, i) => {
+      const yy = 26 + i * (cell + gap);
+      const t = svgEl('text', { x: nameW - 10, y: yy + cell / 2 + 4, 'text-anchor': 'end', fill: 'var(--text-secondary)', 'font-size': 12 });
+      t.textContent = p.name.length > 16 ? p.name.slice(0, 15) + '…' : p.name; svg.appendChild(t);
+      m.dates.forEach((d, j) => {
+        const e = p.days[d], xx = nameW + j * (cell + gap);
+        const field = m.records.filter(r => r.date === d).length;
+        const k = e ? Math.round((e.rank - 1) / Math.max(1, field - 1) * (ramp.length - 1)) : -1;
+        const rect = svgEl('rect', { x: xx, y: yy, width: cell, height: cell, rx: 4, fill: e ? ramp[k] : 'var(--surface-2)' });
+        svg.appendChild(rect);
+        const lbl = svgEl('text', { x: xx + cell / 2, y: yy + cell / 2 + 4, 'text-anchor': 'middle', 'font-size': cell < 28 ? 10 : 12, 'font-weight': 700,
+          fill: e ? (k <= 3 ? '#0b0b0b' : '#ffffff') : 'var(--text-muted)', 'pointer-events': 'none' });
+        lbl.textContent = e ? e.rank : '–'; svg.appendChild(lbl);
+        rect.addEventListener('pointerenter', () => {
+          const r = rect.getBoundingClientRect(), b = box.getBoundingClientRect();
+          tip.show(`<b>${esc(p.name)}</b><br>${longDate(d)}<br>${e ? `${ordinal(e.rank)} place · ${fmt1(e.steps)} steps` : 'No result (counts as last + 1)'}`,
+            r.left - b.left + box.scrollLeft, r.top - b.top);
+        });
+        rect.addEventListener('pointerleave', () => tip.hide());
+      });
+    });
+    box.appendChild(svg);
+  }
+
+  function stepsChart(m) {
+    const box = document.getElementById('stepsChart'); box.innerHTML = '';
+    const list = [...m.players].sort((a, b) => b.totalSteps - a.totalSteps);
+    const W = box.clientWidth, nameW = Math.min(140, W * .34), valW = 70, row = 30, H = list.length * row;
+    const max = Math.max(...list.map(p => p.totalSteps));
+    const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Total steps per player' });
+    const tip = tooltipFor(box);
+    list.forEach((p, i) => {
+      const yy = i * row, bw = Math.max(4, (W - nameW - valW) * p.totalSteps / max);
+      const t = svgEl('text', { x: nameW - 10, y: yy + row / 2 + 4, 'text-anchor': 'end', fill: 'var(--text-secondary)', 'font-size': 12 });
+      t.textContent = p.name.length > 16 ? p.name.slice(0, 15) + '…' : p.name; svg.appendChild(t);
+      // bar with 4px rounded data end, square at baseline
+      const h = 16, y0 = yy + (row - h) / 2, r = Math.min(4, bw / 2);
+      const path = svgEl('path', { d: `M${nameW},${y0} h${bw - r} a${r},${r} 0 0 1 ${r},${r} v${h - 2 * r} a${r},${r} 0 0 1 -${r},${r} h-${bw - r} z`, fill: 'var(--series-1)' });
+      svg.appendChild(path);
+      const v = svgEl('text', { x: nameW + bw + 8, y: yy + row / 2 + 4, fill: 'var(--text-primary)', 'font-size': 12, 'font-weight': 600 });
+      v.textContent = fmt(p.totalSteps); svg.appendChild(v);
+      const hit = svgEl('rect', { x: 0, y: yy, width: W, height: row, fill: 'transparent' });
+      hit.addEventListener('pointerenter', ev => {
+        path.setAttribute('fill', '#5598e7');
+        tip.show(`<b>${esc(p.name)}</b><br>${fmt(p.totalSteps)} steps total<br><span class="muted">${fmt(p.avgSteps)} per day · ${fmt1(p.totalSteps * STRIDE_M / 1000)} km</span>`,
+          (nameW + bw) * box.clientWidth / W, yy);
+      });
+      hit.addEventListener('pointerleave', () => { path.setAttribute('fill', 'var(--series-1)'); tip.hide(); });
+      svg.appendChild(hit);
+    });
+    box.appendChild(svg);
+  }
+
+  function standingsTable(m) {
+    document.getElementById('standings').innerHTML = `
+      <thead><tr><th>#</th><th>Player</th><th class="num">Points</th><th class="num">Wins</th><th class="num">Podiums</th><th class="num">Avg place</th><th class="num">Total steps</th></tr></thead>
+      <tbody>${m.standings.map(p => `<tr class="${p.place === 1 ? 'first' : ''}">
+        <td>${p.place === 1 ? '👑' : p.place === 2 ? '🥈' : p.place === 3 ? '🥉' : p.place}</td>
+        <td><span class="dot" style="background:${p.color}"></span>${esc(p.name)}</td>
+        <td class="num">${p.score}</td><td class="num">${p.wins}</td><td class="num">${p.podiums}</td>
+        <td class="num">${fmt1(p.avgRank)}</td><td class="num">${fmt(p.totalSteps)}</td></tr>`).join('')}</tbody>`;
+  }
+
+  function renderCharts(m) { raceChart(m); heatmap(m); stepsChart(m); standingsTable(m); }
+
+  // ---------- Boot ----------
+  fetch(DATA_FILE, { cache: 'no-store' })
+    .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.text(); })
+    .then(text => {
+      const records = parseCSV(text).filter(r => r.date && r.handle);
+      if (!records.length) throw new Error(`${DATA_FILE} has no rows`);
+      const m = build(records);
+      const dl = document.getElementById('dataLink'); dl.href = DATA_FILE; dl.textContent = DATA_FILE;
+      document.getElementById('month').textContent = `${monthLabel(m)} · ${m.players.length} stompers · ${m.dates.length} day${m.dates.length === 1 ? '' : 's'}`;
+      renderTiles(m);
+      document.getElementById('revealBtn').onclick = () => reveal(m);
+      document.getElementById('replayBtn').onclick = () => {
+        document.getElementById('after').classList.remove('show');
+        document.getElementById('reveal').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => reveal(m), 500);
+      };
+      let rt; addEventListener('resize', () => {
+        clearTimeout(rt);
+        rt = setTimeout(() => { if (document.getElementById('after').classList.contains('show')) renderCharts(m); }, 150);
+      });
+    })
+    .catch(err => {
+      document.getElementById('month').textContent = '';
+      document.getElementById('error').innerHTML = `<div class="error"><b>Couldn't load ${esc(DATA_FILE)}</b> (${esc(err.message)}).<br>
+        If you opened this file directly from disk, browsers block loading the CSV. Run a local server instead,
+        e.g. <code>npx serve</code> or <code>python -m http.server</code>, or view it on GitHub Pages.</div>`;
+    });
+})();
+</script>
+</body>
+</html>
