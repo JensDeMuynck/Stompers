@@ -154,7 +154,7 @@
   <div class="footprints" aria-hidden="true"><span>👣</span><span>👣</span><span>👣</span><span>👣</span><span>👣</span></div>
   <div class="rules">
     <b>How it works:</b> every day, your finishing place becomes your points (1st = 1 point, 2nd = 2 points…).
-    All days are added up and the <b>lowest total wins</b>. Missed a day? You get the points for one place below last.
+    All days are added up and the <b>lowest total wins</b>.
   </div>
 </header>
 
@@ -212,14 +212,14 @@
   </section>
 </main>
 
-<footer>Made for the Stompers. Data: <a id="dataLink" href="results-dummy.csv" style="color:inherit">results-dummy.csv</a></footer>
+<footer>Made for the Stompers. Data: <a id="dataLink" href="results.csv" style="color:inherit">results.csv</a></footer>
 
 <script>
 (() => {
   const SERIES = ['--series-1','--series-2','--series-3','--series-4','--series-5','--series-6','--series-7','--series-8']
     .map(v => getComputedStyle(document.documentElement).getPropertyValue(v).trim());
-  // Which data file to load. Switch to "results.csv" once the real month is in (or use ?csv=results.csv).
-  const DATA_FILE = new URLSearchParams(location.search).get("csv") || "results-dummy.csv";
+  // Which data file to load (override with ?csv=results-dummy.csv).
+  const DATA_FILE = new URLSearchParams(location.search).get("csv") || "results.csv";
   const STRIDE_M = 0.75; // average step length
   const EARTH_KM = 40075;
   const fmt = n => Math.round(n).toLocaleString('en-US');
@@ -574,7 +574,7 @@
         lbl.textContent = e ? e.rank : '–'; svg.appendChild(lbl);
         rect.addEventListener('pointerenter', () => {
           const r = rect.getBoundingClientRect(), b = box.getBoundingClientRect();
-          tip.show(`<b>${esc(p.name)}</b><br>${longDate(d)}<br>${e ? `${ordinal(e.rank)} place · ${fmt1(e.steps)} steps` : 'No result (counts as last + 1)'}`,
+          tip.show(`<b>${esc(p.name)}</b><br>${longDate(d)}<br>${e ? `${ordinal(e.rank)} place · ${fmt1(e.steps)} steps` : 'No result'}`,
             r.left - b.left + box.scrollLeft, r.top - b.top);
         });
         rect.addEventListener('pointerleave', () => tip.hide());

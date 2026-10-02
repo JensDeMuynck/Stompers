@@ -1,205 +1,211 @@
 date,day,rank,name,handle,steps,source_file
-2026-09-01,Tuesday,1,Stellio Vande Velde,stelliovan,16262,dummy
-2026-09-01,Tuesday,2,Nikolaas De Maeyer,nikolaasde,13803.5,dummy
-2026-09-01,Tuesday,3,Maxim Staelens,maximstael,13199,dummy
-2026-09-01,Tuesday,4,Elvina Cool,elvinacool,9169,dummy
-2026-09-01,Tuesday,5,weewauters,maximweewa,6835,dummy
-2026-09-01,Tuesday,6,Sweta,sweta,4035.5,dummy
-2026-09-02,Wednesday,1,Maxim Staelens,maximstael,20633,dummy
-2026-09-02,Wednesday,2,Jens De Muynck,jensdemuyn,18956,dummy
-2026-09-02,Wednesday,3,Stellio Vande Velde,stelliovan,12904,dummy
-2026-09-02,Wednesday,4,Elvina Cool,elvinacool,11059,dummy
-2026-09-02,Wednesday,5,Sweta,sweta,7007,dummy
-2026-09-02,Wednesday,6,Nikolaas De Maeyer,nikolaasde,5085.5,dummy
-2026-09-03,Thursday,1,Maxim Staelens,maximstael,18327,dummy
-2026-09-03,Thursday,2,Jens De Muynck,jensdemuyn,14956,dummy
-2026-09-03,Thursday,3,Stellio Vande Velde,stelliovan,14597.5,dummy
-2026-09-03,Thursday,4,Elvina Cool,elvinacool,14269.5,dummy
-2026-09-03,Thursday,5,Nikolaas De Maeyer,nikolaasde,7370,dummy
-2026-09-03,Thursday,6,weewauters,maximweewa,5051.5,dummy
-2026-09-03,Thursday,7,Sweta,sweta,1200,dummy
-2026-09-04,Friday,1,Maxim Staelens,maximstael,20323,dummy
-2026-09-04,Friday,2,Stellio Vande Velde,stelliovan,18659.5,dummy
-2026-09-04,Friday,3,Jens De Muynck,jensdemuyn,18136.5,dummy
-2026-09-04,Friday,4,Elvina Cool,elvinacool,13492.5,dummy
-2026-09-04,Friday,5,Sweta,sweta,8412,dummy
-2026-09-04,Friday,6,Nikolaas De Maeyer,nikolaasde,7475.5,dummy
-2026-09-04,Friday,7,weewauters,maximweewa,3644,dummy
-2026-09-05,Saturday,1,Maxim Staelens,maximstael,17972.5,dummy
-2026-09-05,Saturday,2,Stellio Vande Velde,stelliovan,17725.5,dummy
-2026-09-05,Saturday,3,Jens De Muynck,jensdemuyn,13212.5,dummy
-2026-09-05,Saturday,4,Sweta,sweta,11223.5,dummy
-2026-09-05,Saturday,5,Elvina Cool,elvinacool,8680.5,dummy
-2026-09-05,Saturday,6,Nikolaas De Maeyer,nikolaasde,7715.5,dummy
-2026-09-05,Saturday,7,weewauters,maximweewa,7336.5,dummy
-2026-09-06,Sunday,1,Stellio Vande Velde,stelliovan,17728.5,dummy
-2026-09-06,Sunday,2,Maxim Staelens,maximstael,15811,dummy
-2026-09-06,Sunday,3,Elvina Cool,elvinacool,11641.5,dummy
-2026-09-06,Sunday,4,Sweta,sweta,10748.5,dummy
-2026-09-06,Sunday,5,Jens De Muynck,jensdemuyn,10711.5,dummy
-2026-09-06,Sunday,6,weewauters,maximweewa,5988.5,dummy
-2026-09-06,Sunday,7,Nikolaas De Maeyer,nikolaasde,4882.5,dummy
-2026-09-07,Monday,1,Maxim Staelens,maximstael,25514.5,dummy
-2026-09-07,Monday,2,Sweta,sweta,17423.5,dummy
-2026-09-07,Monday,3,Stellio Vande Velde,stelliovan,15030.5,dummy
-2026-09-07,Monday,4,Elvina Cool,elvinacool,13672,dummy
-2026-09-07,Monday,5,Jens De Muynck,jensdemuyn,11022.5,dummy
-2026-09-07,Monday,6,Nikolaas De Maeyer,nikolaasde,5167,dummy
-2026-09-07,Monday,7,weewauters,maximweewa,2689,dummy
-2026-09-08,Tuesday,1,Maxim Staelens,maximstael,18510,dummy
-2026-09-08,Tuesday,2,Jens De Muynck,jensdemuyn,16813.5,dummy
-2026-09-08,Tuesday,3,Elvina Cool,elvinacool,12634,dummy
-2026-09-08,Tuesday,4,Sweta,sweta,11343.5,dummy
-2026-09-08,Tuesday,5,Stellio Vande Velde,stelliovan,10430,dummy
-2026-09-08,Tuesday,6,Nikolaas De Maeyer,nikolaasde,9980.5,dummy
-2026-09-08,Tuesday,7,weewauters,maximweewa,6894,dummy
-2026-09-09,Wednesday,1,Stellio Vande Velde,stelliovan,18009.5,dummy
-2026-09-09,Wednesday,2,Jens De Muynck,jensdemuyn,13293.5,dummy
-2026-09-09,Wednesday,3,Sweta,sweta,12985,dummy
-2026-09-09,Wednesday,4,weewauters,maximweewa,12798,dummy
-2026-09-09,Wednesday,5,Maxim Staelens,maximstael,12723,dummy
-2026-09-09,Wednesday,6,Elvina Cool,elvinacool,12621,dummy
-2026-09-09,Wednesday,7,Nikolaas De Maeyer,nikolaasde,6396,dummy
-2026-09-10,Thursday,1,Maxim Staelens,maximstael,18324,dummy
-2026-09-10,Thursday,2,Jens De Muynck,jensdemuyn,15483.5,dummy
-2026-09-10,Thursday,3,Stellio Vande Velde,stelliovan,15470,dummy
-2026-09-10,Thursday,4,weewauters,maximweewa,15142,dummy
-2026-09-10,Thursday,5,Elvina Cool,elvinacool,12453.5,dummy
-2026-09-11,Friday,1,Jens De Muynck,jensdemuyn,23341.5,dummy
-2026-09-11,Friday,2,Maxim Staelens,maximstael,17164.5,dummy
-2026-09-11,Friday,3,Elvina Cool,elvinacool,11959.5,dummy
-2026-09-11,Friday,4,Nikolaas De Maeyer,nikolaasde,11862.5,dummy
-2026-09-11,Friday,5,weewauters,maximweewa,11048,dummy
-2026-09-11,Friday,6,Sweta,sweta,11041,dummy
-2026-09-11,Friday,7,Stellio Vande Velde,stelliovan,9294.5,dummy
-2026-09-12,Saturday,1,Elvina Cool,elvinacool,15585,dummy
-2026-09-12,Saturday,2,Maxim Staelens,maximstael,14844.5,dummy
-2026-09-12,Saturday,3,Jens De Muynck,jensdemuyn,13847.5,dummy
-2026-09-12,Saturday,4,Stellio Vande Velde,stelliovan,12302.5,dummy
-2026-09-12,Saturday,5,Sweta,sweta,11619,dummy
-2026-09-12,Saturday,6,Nikolaas De Maeyer,nikolaasde,4092,dummy
-2026-09-12,Saturday,7,weewauters,maximweewa,2378,dummy
-2026-09-13,Sunday,1,Maxim Staelens,maximstael,21061.5,dummy
-2026-09-13,Sunday,2,Jens De Muynck,jensdemuyn,19647,dummy
-2026-09-13,Sunday,3,Stellio Vande Velde,stelliovan,15266.5,dummy
-2026-09-13,Sunday,4,Sweta,sweta,13681,dummy
-2026-09-13,Sunday,5,Elvina Cool,elvinacool,11963.5,dummy
-2026-09-13,Sunday,6,weewauters,maximweewa,11482,dummy
-2026-09-13,Sunday,7,Nikolaas De Maeyer,nikolaasde,8791.5,dummy
-2026-09-14,Monday,1,Jens De Muynck,jensdemuyn,22811,dummy
-2026-09-14,Monday,2,Maxim Staelens,maximstael,14637,dummy
-2026-09-14,Monday,3,Stellio Vande Velde,stelliovan,13937,dummy
-2026-09-14,Monday,4,Nikolaas De Maeyer,nikolaasde,13704.5,dummy
-2026-09-14,Monday,5,Sweta,sweta,10986,dummy
-2026-09-14,Monday,6,Elvina Cool,elvinacool,9252.5,dummy
-2026-09-14,Monday,7,weewauters,maximweewa,6978.5,dummy
-2026-09-15,Tuesday,1,Jens De Muynck,jensdemuyn,20656.5,dummy
-2026-09-15,Tuesday,2,Maxim Staelens,maximstael,15684.5,dummy
-2026-09-15,Tuesday,3,Elvina Cool,elvinacool,15652,dummy
-2026-09-15,Tuesday,4,Stellio Vande Velde,stelliovan,14724.5,dummy
-2026-09-15,Tuesday,5,Nikolaas De Maeyer,nikolaasde,13168,dummy
-2026-09-15,Tuesday,6,weewauters,maximweewa,9292,dummy
-2026-09-15,Tuesday,7,Sweta,sweta,3856.5,dummy
-2026-09-16,Wednesday,1,Jens De Muynck,jensdemuyn,19659,dummy
-2026-09-16,Wednesday,2,weewauters,maximweewa,11457.5,dummy
-2026-09-16,Wednesday,3,Stellio Vande Velde,stelliovan,10488,dummy
-2026-09-16,Wednesday,4,Elvina Cool,elvinacool,10148.5,dummy
-2026-09-16,Wednesday,5,Sweta,sweta,8177,dummy
-2026-09-16,Wednesday,6,Nikolaas De Maeyer,nikolaasde,1986,dummy
-2026-09-17,Thursday,1,Stellio Vande Velde,stelliovan,21307.5,dummy
-2026-09-17,Thursday,2,Elvina Cool,elvinacool,13113,dummy
-2026-09-17,Thursday,3,Nikolaas De Maeyer,nikolaasde,12482,dummy
-2026-09-17,Thursday,4,Maxim Staelens,maximstael,11968.5,dummy
-2026-09-17,Thursday,5,Sweta,sweta,10022.5,dummy
-2026-09-17,Thursday,6,Jens De Muynck,jensdemuyn,9640,dummy
-2026-09-17,Thursday,7,weewauters,maximweewa,8274.5,dummy
-2026-09-18,Friday,1,Jens De Muynck,jensdemuyn,23276,dummy
-2026-09-18,Friday,2,Maxim Staelens,maximstael,16073,dummy
-2026-09-18,Friday,3,Elvina Cool,elvinacool,14030.5,dummy
-2026-09-18,Friday,4,Sweta,sweta,10362,dummy
-2026-09-18,Friday,5,Stellio Vande Velde,stelliovan,8949.5,dummy
-2026-09-18,Friday,6,Nikolaas De Maeyer,nikolaasde,8646.5,dummy
-2026-09-18,Friday,7,weewauters,maximweewa,2731.5,dummy
-2026-09-19,Saturday,1,Maxim Staelens,maximstael,20184,dummy
-2026-09-19,Saturday,2,Jens De Muynck,jensdemuyn,18036.5,dummy
-2026-09-19,Saturday,3,Stellio Vande Velde,stelliovan,16682.5,dummy
-2026-09-19,Saturday,4,Elvina Cool,elvinacool,16337,dummy
-2026-09-19,Saturday,5,weewauters,maximweewa,13373,dummy
-2026-09-19,Saturday,6,Sweta,sweta,9170,dummy
-2026-09-19,Saturday,7,Nikolaas De Maeyer,nikolaasde,8388.5,dummy
-2026-09-20,Sunday,1,Maxim Staelens,maximstael,18902.5,dummy
-2026-09-20,Sunday,2,Jens De Muynck,jensdemuyn,15321,dummy
-2026-09-20,Sunday,3,Stellio Vande Velde,stelliovan,15176.5,dummy
-2026-09-20,Sunday,4,Elvina Cool,elvinacool,14952.5,dummy
-2026-09-20,Sunday,5,Nikolaas De Maeyer,nikolaasde,12594.5,dummy
-2026-09-20,Sunday,6,Sweta,sweta,11057,dummy
-2026-09-20,Sunday,7,weewauters,maximweewa,9833.5,dummy
-2026-09-21,Monday,1,Elvina Cool,elvinacool,13798.5,dummy
-2026-09-21,Monday,2,Stellio Vande Velde,stelliovan,13714,dummy
-2026-09-21,Monday,3,Jens De Muynck,jensdemuyn,11948,dummy
-2026-09-21,Monday,4,Maxim Staelens,maximstael,10317.5,dummy
-2026-09-21,Monday,5,Sweta,sweta,9135.5,dummy
-2026-09-21,Monday,6,weewauters,maximweewa,5576.5,dummy
-2026-09-21,Monday,7,Nikolaas De Maeyer,nikolaasde,2111,dummy
-2026-09-22,Tuesday,1,Jens De Muynck,jensdemuyn,19115.5,dummy
-2026-09-22,Tuesday,2,Maxim Staelens,maximstael,18980.5,dummy
-2026-09-22,Tuesday,3,Elvina Cool,elvinacool,13858.5,dummy
-2026-09-22,Tuesday,4,weewauters,maximweewa,13007.5,dummy
-2026-09-22,Tuesday,5,Stellio Vande Velde,stelliovan,12938.5,dummy
-2026-09-22,Tuesday,6,Sweta,sweta,10870,dummy
-2026-09-22,Tuesday,7,Nikolaas De Maeyer,nikolaasde,8223.5,dummy
-2026-09-23,Wednesday,1,Maxim Staelens,maximstael,23465,dummy
-2026-09-23,Wednesday,2,Stellio Vande Velde,stelliovan,18931,dummy
-2026-09-23,Wednesday,3,Jens De Muynck,jensdemuyn,17231,dummy
-2026-09-23,Wednesday,4,Elvina Cool,elvinacool,14327,dummy
-2026-09-23,Wednesday,5,weewauters,maximweewa,10123.5,dummy
-2026-09-23,Wednesday,6,Sweta,sweta,6453,dummy
-2026-09-24,Thursday,1,Jens De Muynck,jensdemuyn,19726,dummy
-2026-09-24,Thursday,2,Stellio Vande Velde,stelliovan,17440.5,dummy
-2026-09-24,Thursday,3,Maxim Staelens,maximstael,12707.5,dummy
-2026-09-24,Thursday,4,Nikolaas De Maeyer,nikolaasde,11685,dummy
-2026-09-24,Thursday,5,weewauters,maximweewa,9474.5,dummy
-2026-09-24,Thursday,6,Elvina Cool,elvinacool,8372,dummy
-2026-09-24,Thursday,7,Sweta,sweta,7944.5,dummy
-2026-09-25,Friday,1,Stellio Vande Velde,stelliovan,19044.5,dummy
-2026-09-25,Friday,2,Jens De Muynck,jensdemuyn,16513.5,dummy
-2026-09-25,Friday,3,Elvina Cool,elvinacool,15268,dummy
-2026-09-25,Friday,4,Maxim Staelens,maximstael,12322.5,dummy
-2026-09-25,Friday,5,weewauters,maximweewa,11126,dummy
-2026-09-25,Friday,6,Nikolaas De Maeyer,nikolaasde,5646.5,dummy
-2026-09-25,Friday,7,Sweta,sweta,5214.5,dummy
-2026-09-26,Saturday,1,Jens De Muynck,jensdemuyn,22698.5,dummy
-2026-09-26,Saturday,2,Maxim Staelens,maximstael,17369,dummy
-2026-09-26,Saturday,3,Nikolaas De Maeyer,nikolaasde,10737,dummy
-2026-09-26,Saturday,4,Stellio Vande Velde,stelliovan,9628,dummy
-2026-09-26,Saturday,5,Elvina Cool,elvinacool,9490.5,dummy
-2026-09-26,Saturday,6,Sweta,sweta,7406.5,dummy
-2026-09-26,Saturday,7,weewauters,maximweewa,5939,dummy
-2026-09-27,Sunday,1,Sweta,sweta,16750,dummy
-2026-09-27,Sunday,2,Maxim Staelens,maximstael,14322.5,dummy
-2026-09-27,Sunday,3,Jens De Muynck,jensdemuyn,12446.5,dummy
-2026-09-27,Sunday,4,Stellio Vande Velde,stelliovan,12038.5,dummy
-2026-09-27,Sunday,5,Nikolaas De Maeyer,nikolaasde,11569.5,dummy
-2026-09-27,Sunday,6,weewauters,maximweewa,9393,dummy
-2026-09-27,Sunday,7,Elvina Cool,elvinacool,9041,dummy
-2026-09-28,Monday,1,Jens De Muynck,jensdemuyn,15387.5,dummy
-2026-09-28,Monday,2,Maxim Staelens,maximstael,11630.5,dummy
-2026-09-28,Monday,3,Stellio Vande Velde,stelliovan,10096,dummy
-2026-09-28,Monday,4,Elvina Cool,elvinacool,9521,dummy
-2026-09-28,Monday,5,Sweta,sweta,8937,dummy
-2026-09-28,Monday,6,Nikolaas De Maeyer,nikolaasde,5759,dummy
-2026-09-28,Monday,7,weewauters,maximweewa,5597.5,dummy
-2026-09-29,Tuesday,1,Jens De Muynck,jensdemuyn,21378.5,dummy
-2026-09-29,Tuesday,2,Stellio Vande Velde,stelliovan,19748.5,dummy
-2026-09-29,Tuesday,3,Sweta,sweta,15733,dummy
-2026-09-29,Tuesday,4,Maxim Staelens,maximstael,14113.5,dummy
-2026-09-29,Tuesday,5,Elvina Cool,elvinacool,11619,dummy
-2026-09-29,Tuesday,6,Nikolaas De Maeyer,nikolaasde,9830,dummy
-2026-09-29,Tuesday,7,weewauters,maximweewa,7464.5,dummy
-2026-09-30,Wednesday,1,Sweta,sweta,17882,dummy
-2026-09-30,Wednesday,2,Jens De Muynck,jensdemuyn,17607.5,dummy
-2026-09-30,Wednesday,3,Maxim Staelens,maximstael,15109.5,dummy
-2026-09-30,Wednesday,4,Elvina Cool,elvinacool,12259.5,dummy
-2026-09-30,Wednesday,5,weewauters,maximweewa,10446.5,dummy
-2026-09-30,Wednesday,6,Stellio Vande Velde,stelliovan,8066.5,dummy
-2026-09-30,Wednesday,7,Nikolaas De Maeyer,nikolaasde,7815,dummy
+2026-09-01,Tuesday,1,Stellio Vande Velde,stelliovan,17630.5,dummy
+2026-09-01,Tuesday,2,Jens De Muynck,jensdemuyn,13582.5,dummy
+2026-09-01,Tuesday,3,Sweta,sweta,12881.5,dummy
+2026-09-01,Tuesday,4,Elvina Cool,elvinacool,10578,dummy
+2026-09-01,Tuesday,5,Maxim Staelens,maximstael,9022.5,dummy
+2026-09-01,Tuesday,6,weewauters,maximweewa,7562,dummy
+2026-09-01,Tuesday,7,Nikolaas De Maeyer,nikolaasde,3813,dummy
+2026-09-02,Wednesday,1,Sweta,sweta,22753,dummy
+2026-09-02,Wednesday,2,Jens De Muynck,jensdemuyn,16778.5,dummy
+2026-09-02,Wednesday,3,Maxim Staelens,maximstael,15293,dummy
+2026-09-02,Wednesday,4,Stellio Vande Velde,stelliovan,13206,dummy
+2026-09-02,Wednesday,5,Nikolaas De Maeyer,nikolaasde,12245.5,dummy
+2026-09-02,Wednesday,6,Elvina Cool,elvinacool,5113,dummy
+2026-09-02,Wednesday,7,weewauters,maximweewa,3896,dummy
+2026-09-03,Thursday,1,Jens De Muynck,jensdemuyn,14351.5,dummy
+2026-09-03,Thursday,2,Elvina Cool,elvinacool,13084,dummy
+2026-09-03,Thursday,3,Sweta,sweta,12145.5,dummy
+2026-09-03,Thursday,4,weewauters,maximweewa,10957,dummy
+2026-09-03,Thursday,5,Stellio Vande Velde,stelliovan,10331,dummy
+2026-09-03,Thursday,6,Nikolaas De Maeyer,nikolaasde,8524,dummy
+2026-09-03,Thursday,7,Maxim Staelens,maximstael,8152.5,dummy
+2026-09-04,Friday,1,Maxim Staelens,maximstael,17654.5,dummy
+2026-09-04,Friday,2,Jens De Muynck,jensdemuyn,16183,dummy
+2026-09-04,Friday,3,Nikolaas De Maeyer,nikolaasde,13203.5,dummy
+2026-09-04,Friday,4,Elvina Cool,elvinacool,11103,dummy
+2026-09-04,Friday,5,weewauters,maximweewa,10775.5,dummy
+2026-09-04,Friday,6,Sweta,sweta,8682.5,dummy
+2026-09-04,Friday,7,Stellio Vande Velde,stelliovan,5328,dummy
+2026-09-05,Saturday,1,Stellio Vande Velde,stelliovan,21716.5,dummy
+2026-09-05,Saturday,2,Jens De Muynck,jensdemuyn,19679,dummy
+2026-09-05,Saturday,3,Maxim Staelens,maximstael,18881,dummy
+2026-09-05,Saturday,4,Elvina Cool,elvinacool,16243,dummy
+2026-09-05,Saturday,5,Nikolaas De Maeyer,nikolaasde,11061,dummy
+2026-09-05,Saturday,6,Sweta,sweta,8359.5,dummy
+2026-09-05,Saturday,7,weewauters,maximweewa,4871.5,dummy
+2026-09-06,Sunday,1,Maxim Staelens,maximstael,16574,dummy
+2026-09-06,Sunday,2,Jens De Muynck,jensdemuyn,13840.5,dummy
+2026-09-06,Sunday,3,Stellio Vande Velde,stelliovan,12822.5,dummy
+2026-09-06,Sunday,4,Elvina Cool,elvinacool,12667.5,dummy
+2026-09-06,Sunday,5,Sweta,sweta,12582,dummy
+2026-09-06,Sunday,6,Nikolaas De Maeyer,nikolaasde,9762,dummy
+2026-09-06,Sunday,7,weewauters,maximweewa,7532.5,dummy
+2026-09-07,Monday,1,Sweta,sweta,16145,dummy
+2026-09-07,Monday,2,Elvina Cool,elvinacool,12320,dummy
+2026-09-07,Monday,3,Jens De Muynck,jensdemuyn,12024.5,dummy
+2026-09-07,Monday,4,Stellio Vande Velde,stelliovan,11444,dummy
+2026-09-07,Monday,5,Maxim Staelens,maximstael,10290.5,dummy
+2026-09-07,Monday,6,weewauters,maximweewa,7387.5,dummy
+2026-09-07,Monday,7,Nikolaas De Maeyer,nikolaasde,3453.5,dummy
+2026-09-08,Tuesday,1,Jens De Muynck,jensdemuyn,18161.5,dummy
+2026-09-08,Tuesday,2,weewauters,maximweewa,17984.5,dummy
+2026-09-08,Tuesday,3,Stellio Vande Velde,stelliovan,12093,dummy
+2026-09-08,Tuesday,4,Maxim Staelens,maximstael,11837,dummy
+2026-09-08,Tuesday,5,Sweta,sweta,8837,dummy
+2026-09-08,Tuesday,6,Elvina Cool,elvinacool,8199,dummy
+2026-09-08,Tuesday,7,Nikolaas De Maeyer,nikolaasde,6056.5,dummy
+2026-09-09,Wednesday,1,Sweta,sweta,22370.5,dummy
+2026-09-09,Wednesday,2,Maxim Staelens,maximstael,18428,dummy
+2026-09-09,Wednesday,3,Stellio Vande Velde,stelliovan,17201,dummy
+2026-09-09,Wednesday,4,Jens De Muynck,jensdemuyn,15800,dummy
+2026-09-09,Wednesday,5,Elvina Cool,elvinacool,13639.5,dummy
+2026-09-09,Wednesday,6,weewauters,maximweewa,5783,dummy
+2026-09-09,Wednesday,7,Nikolaas De Maeyer,nikolaasde,2279,dummy
+2026-09-10,Thursday,1,Stellio Vande Velde,stelliovan,17127,dummy
+2026-09-10,Thursday,2,Elvina Cool,elvinacool,15658,dummy
+2026-09-10,Thursday,3,Maxim Staelens,maximstael,13196,dummy
+2026-09-10,Thursday,4,Jens De Muynck,jensdemuyn,13094,dummy
+2026-09-10,Thursday,5,Nikolaas De Maeyer,nikolaasde,8835.5,dummy
+2026-09-10,Thursday,6,Sweta,sweta,7844,dummy
+2026-09-10,Thursday,7,weewauters,maximweewa,6717.5,dummy
+2026-09-11,Friday,1,Sweta,sweta,17953,dummy
+2026-09-11,Friday,2,Jens De Muynck,jensdemuyn,15656,dummy
+2026-09-11,Friday,3,Stellio Vande Velde,stelliovan,13697.5,dummy
+2026-09-11,Friday,4,Maxim Staelens,maximstael,12439,dummy
+2026-09-11,Friday,5,Elvina Cool,elvinacool,9888,dummy
+2026-09-11,Friday,6,Nikolaas De Maeyer,nikolaasde,7069.5,dummy
+2026-09-11,Friday,7,weewauters,maximweewa,5976,dummy
+2026-09-12,Saturday,1,Jens De Muynck,jensdemuyn,21632.5,dummy
+2026-09-12,Saturday,2,Sweta,sweta,18597.5,dummy
+2026-09-12,Saturday,3,Maxim Staelens,maximstael,16681.5,dummy
+2026-09-12,Saturday,4,Stellio Vande Velde,stelliovan,16166,dummy
+2026-09-12,Saturday,5,Nikolaas De Maeyer,nikolaasde,12663.5,dummy
+2026-09-12,Saturday,6,Elvina Cool,elvinacool,11518,dummy
+2026-09-12,Saturday,7,weewauters,maximweewa,4389,dummy
+2026-09-13,Sunday,1,Maxim Staelens,maximstael,19135,dummy
+2026-09-13,Sunday,2,Elvina Cool,elvinacool,18008.5,dummy
+2026-09-13,Sunday,3,Jens De Muynck,jensdemuyn,16524.5,dummy
+2026-09-13,Sunday,4,Stellio Vande Velde,stelliovan,15577,dummy
+2026-09-13,Sunday,5,weewauters,maximweewa,14091.5,dummy
+2026-09-13,Sunday,6,Sweta,sweta,13308,dummy
+2026-09-13,Sunday,7,Nikolaas De Maeyer,nikolaasde,11328.5,dummy
+2026-09-14,Monday,1,Maxim Staelens,maximstael,22146,dummy
+2026-09-14,Monday,2,Sweta,sweta,15434.5,dummy
+2026-09-14,Monday,3,Jens De Muynck,jensdemuyn,13960.5,dummy
+2026-09-14,Monday,4,Stellio Vande Velde,stelliovan,13807,dummy
+2026-09-14,Monday,5,weewauters,maximweewa,11353,dummy
+2026-09-14,Monday,6,Nikolaas De Maeyer,nikolaasde,8736,dummy
+2026-09-14,Monday,7,Elvina Cool,elvinacool,7116.5,dummy
+2026-09-15,Tuesday,1,Jens De Muynck,jensdemuyn,13861.5,dummy
+2026-09-15,Tuesday,2,Maxim Staelens,maximstael,12937,dummy
+2026-09-15,Tuesday,3,weewauters,maximweewa,10446.5,dummy
+2026-09-15,Tuesday,4,Stellio Vande Velde,stelliovan,10399,dummy
+2026-09-15,Tuesday,5,Sweta,sweta,10344.5,dummy
+2026-09-15,Tuesday,6,Elvina Cool,elvinacool,10098,dummy
+2026-09-15,Tuesday,7,Nikolaas De Maeyer,nikolaasde,5902.5,dummy
+2026-09-16,Wednesday,1,Jens De Muynck,jensdemuyn,14094.5,dummy
+2026-09-16,Wednesday,2,Sweta,sweta,12505,dummy
+2026-09-16,Wednesday,3,weewauters,maximweewa,12359.5,dummy
+2026-09-16,Wednesday,4,Nikolaas De Maeyer,nikolaasde,11993.5,dummy
+2026-09-16,Wednesday,5,Elvina Cool,elvinacool,9104,dummy
+2026-09-16,Wednesday,6,Stellio Vande Velde,stelliovan,8381,dummy
+2026-09-16,Wednesday,7,Maxim Staelens,maximstael,7532.5,dummy
+2026-09-17,Thursday,1,Jens De Muynck,jensdemuyn,15872,dummy
+2026-09-17,Thursday,2,Stellio Vande Velde,stelliovan,13714,dummy
+2026-09-17,Thursday,3,Nikolaas De Maeyer,nikolaasde,13135.5,dummy
+2026-09-17,Thursday,4,Maxim Staelens,maximstael,13034.5,dummy
+2026-09-17,Thursday,5,Elvina Cool,elvinacool,12594.5,dummy
+2026-09-17,Thursday,6,Sweta,sweta,12575,dummy
+2026-09-17,Thursday,7,weewauters,maximweewa,3150.5,dummy
+2026-09-18,Friday,1,Jens De Muynck,jensdemuyn,20700.5,dummy
+2026-09-18,Friday,2,Maxim Staelens,maximstael,19255,dummy
+2026-09-18,Friday,3,Stellio Vande Velde,stelliovan,13947,dummy
+2026-09-18,Friday,4,Nikolaas De Maeyer,nikolaasde,12480.5,dummy
+2026-09-18,Friday,5,Elvina Cool,elvinacool,11325,dummy
+2026-09-18,Friday,6,weewauters,maximweewa,10075.5,dummy
+2026-09-18,Friday,7,Sweta,sweta,5137.5,dummy
+2026-09-19,Saturday,1,Jens De Muynck,jensdemuyn,18473,dummy
+2026-09-19,Saturday,2,Elvina Cool,elvinacool,17617.5,dummy
+2026-09-19,Saturday,3,Maxim Staelens,maximstael,17582.5,dummy
+2026-09-19,Saturday,4,Sweta,sweta,13884.5,dummy
+2026-09-19,Saturday,5,Stellio Vande Velde,stelliovan,13210.5,dummy
+2026-09-19,Saturday,6,weewauters,maximweewa,13003,dummy
+2026-09-19,Saturday,7,Nikolaas De Maeyer,nikolaasde,10624.5,dummy
+2026-09-20,Sunday,1,Maxim Staelens,maximstael,21859,dummy
+2026-09-20,Sunday,2,Stellio Vande Velde,stelliovan,16530.5,dummy
+2026-09-20,Sunday,3,Sweta,sweta,16141,dummy
+2026-09-20,Sunday,4,Elvina Cool,elvinacool,12166,dummy
+2026-09-20,Sunday,5,Nikolaas De Maeyer,nikolaasde,10300,dummy
+2026-09-20,Sunday,6,Jens De Muynck,jensdemuyn,9811.5,dummy
+2026-09-20,Sunday,7,weewauters,maximweewa,9636,dummy
+2026-09-21,Monday,1,Maxim Staelens,maximstael,18646.5,dummy
+2026-09-21,Monday,2,Elvina Cool,elvinacool,14209,dummy
+2026-09-21,Monday,3,Sweta,sweta,13292,dummy
+2026-09-21,Monday,4,weewauters,maximweewa,8974,dummy
+2026-09-21,Monday,5,Nikolaas De Maeyer,nikolaasde,7338.5,dummy
+2026-09-21,Monday,6,Jens De Muynck,jensdemuyn,6651,dummy
+2026-09-21,Monday,7,Stellio Vande Velde,stelliovan,5187,dummy
+2026-09-22,Tuesday,1,Stellio Vande Velde,stelliovan,20693.5,dummy
+2026-09-22,Tuesday,2,Maxim Staelens,maximstael,15188,dummy
+2026-09-22,Tuesday,3,Nikolaas De Maeyer,nikolaasde,15029.5,dummy
+2026-09-22,Tuesday,4,Jens De Muynck,jensdemuyn,12231.5,dummy
+2026-09-22,Tuesday,5,Sweta,sweta,9843,dummy
+2026-09-22,Tuesday,6,Elvina Cool,elvinacool,9674.5,dummy
+2026-09-22,Tuesday,7,weewauters,maximweewa,9460,dummy
+2026-09-23,Wednesday,1,Stellio Vande Velde,stelliovan,20804,dummy
+2026-09-23,Wednesday,2,Maxim Staelens,maximstael,19508.5,dummy
+2026-09-23,Wednesday,3,Jens De Muynck,jensdemuyn,14720,dummy
+2026-09-23,Wednesday,4,Elvina Cool,elvinacool,13215,dummy
+2026-09-23,Wednesday,5,Nikolaas De Maeyer,nikolaasde,10785.5,dummy
+2026-09-23,Wednesday,6,weewauters,maximweewa,6544,dummy
+2026-09-23,Wednesday,7,Sweta,sweta,5506.5,dummy
+2026-09-24,Thursday,1,Stellio Vande Velde,stelliovan,15886.5,dummy
+2026-09-24,Thursday,2,Jens De Muynck,jensdemuyn,15096,dummy
+2026-09-24,Thursday,3,Elvina Cool,elvinacool,13305.5,dummy
+2026-09-24,Thursday,4,Sweta,sweta,12193.5,dummy
+2026-09-24,Thursday,5,Nikolaas De Maeyer,nikolaasde,12059.5,dummy
+2026-09-24,Thursday,6,weewauters,maximweewa,10866,dummy
+2026-09-24,Thursday,7,Maxim Staelens,maximstael,9073,dummy
+2026-09-25,Friday,1,Sweta,sweta,17435.5,dummy
+2026-09-25,Friday,2,Jens De Muynck,jensdemuyn,16682.5,dummy
+2026-09-25,Friday,3,Maxim Staelens,maximstael,15129.5,dummy
+2026-09-25,Friday,4,Stellio Vande Velde,stelliovan,13635,dummy
+2026-09-25,Friday,5,Elvina Cool,elvinacool,10860,dummy
+2026-09-25,Friday,6,weewauters,maximweewa,10110.5,dummy
+2026-09-25,Friday,7,Nikolaas De Maeyer,nikolaasde,9763.5,dummy
+2026-09-26,Saturday,1,Elvina Cool,elvinacool,17866.5,dummy
+2026-09-26,Saturday,2,Maxim Staelens,maximstael,17138,dummy
+2026-09-26,Saturday,3,Jens De Muynck,jensdemuyn,17106.5,dummy
+2026-09-26,Saturday,4,Stellio Vande Velde,stelliovan,14085.5,dummy
+2026-09-26,Saturday,5,weewauters,maximweewa,13012.5,dummy
+2026-09-26,Saturday,6,Nikolaas De Maeyer,nikolaasde,9953.5,dummy
+2026-09-26,Saturday,7,Sweta,sweta,8982,dummy
+2026-09-27,Sunday,1,Jens De Muynck,jensdemuyn,19551.5,dummy
+2026-09-27,Sunday,2,Maxim Staelens,maximstael,15372,dummy
+2026-09-27,Sunday,3,Sweta,sweta,12832.5,dummy
+2026-09-27,Sunday,4,Stellio Vande Velde,stelliovan,12292,dummy
+2026-09-27,Sunday,5,Nikolaas De Maeyer,nikolaasde,11415,dummy
+2026-09-27,Sunday,6,Elvina Cool,elvinacool,10628.5,dummy
+2026-09-27,Sunday,7,weewauters,maximweewa,6253.5,dummy
+2026-09-28,Monday,1,Elvina Cool,elvinacool,14430,dummy
+2026-09-28,Monday,2,Nikolaas De Maeyer,nikolaasde,13694.5,dummy
+2026-09-28,Monday,3,Maxim Staelens,maximstael,12273.5,dummy
+2026-09-28,Monday,4,weewauters,maximweewa,10315.5,dummy
+2026-09-28,Monday,5,Sweta,sweta,9566,dummy
+2026-09-28,Monday,6,Stellio Vande Velde,stelliovan,9035.5,dummy
+2026-09-28,Monday,7,Jens De Muynck,jensdemuyn,7627,dummy
+2026-09-29,Tuesday,1,Sweta,sweta,17249,dummy
+2026-09-29,Tuesday,2,Elvina Cool,elvinacool,15847,dummy
+2026-09-29,Tuesday,3,Jens De Muynck,jensdemuyn,14062.5,dummy
+2026-09-29,Tuesday,4,Maxim Staelens,maximstael,13055.5,dummy
+2026-09-29,Tuesday,5,Stellio Vande Velde,stelliovan,12165.5,dummy
+2026-09-29,Tuesday,6,Nikolaas De Maeyer,nikolaasde,9841.5,dummy
+2026-09-29,Tuesday,7,weewauters,maximweewa,3020.5,dummy
+2026-09-30,Wednesday,1,Maxim Staelens,maximstael,25396.5,dummy
+2026-09-30,Wednesday,2,Stellio Vande Velde,stelliovan,18116,dummy
+2026-09-30,Wednesday,3,Jens De Muynck,jensdemuyn,17868.5,dummy
+2026-09-30,Wednesday,4,weewauters,maximweewa,14003.5,dummy
+2026-09-30,Wednesday,5,Nikolaas De Maeyer,nikolaasde,12224,dummy
+2026-09-30,Wednesday,6,Elvina Cool,elvinacool,10729,dummy
+2026-09-30,Wednesday,7,Sweta,sweta,8868,dummy
